@@ -1,16 +1,22 @@
 import React from "react";
 import CircularProgress from "@mui/material/CircularProgress";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
 
 const Loading = () => {
   return (
     <>
-      <Container maxWidth="lg" sx={{ m: 5 }}>
-        <Typography align="center">
-          <CircularProgress />
-        </Typography>
-      </Container>
+      <Grid
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+        sx={{ minHeight: "100vh" }}
+      >
+        <Grid item>
+          <CircularProgress size="4rem" />
+        </Grid>
+      </Grid>
     </>
   );
 };
