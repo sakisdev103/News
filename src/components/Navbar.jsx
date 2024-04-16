@@ -1,5 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "../App";
+
 import Typography from "@mui/material/Typography";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -8,13 +9,13 @@ import Select from "@mui/material/Select";
 import AppBar from "@mui/material/AppBar";
 import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
-
 import * as icons from "country-flag-icons/react/1x1";
-import { countries, categories } from "../data";
+
+import { countries } from "../data";
 
 const Navbar = () => {
-  console.log(icons.US);
   const { selectedCountry, setSelectedCountry, fetchFunc } = useGlobalContext();
+
   const handleChange = (e) => {
     setSelectedCountry(e.target.value);
     fetchFunc(e.target.value);
@@ -40,14 +41,14 @@ const Navbar = () => {
                 {countries.map((country) => {
                   const Flag = icons[country];
                   return (
-                    <MenuItem
-                      value={country}
-                      key={country}
-                      style={{ alignItems: "center", gap: "0.3rem" }}
-                    >
+                    <MenuItem value={country} key={country}>
                       <Flag
                         title={country}
-                        style={{ width: "1.5rem", height: "0.8rem" }}
+                        style={{
+                          width: "1.5rem",
+                          height: "0.8rem",
+                          marginRight: "0.2rem",
+                        }}
                       />
                       {country}
                     </MenuItem>
