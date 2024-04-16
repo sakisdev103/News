@@ -21,7 +21,7 @@ const Articles = () => {
               <Grid item xs={12} sm={6} md={4} key={title}>
                 <Card>
                   <CardContent>
-                    <Typography gutterBottom variant="h6" component="div">
+                    <Typography gutterBottom variant="title-sm" component="div">
                       {title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
