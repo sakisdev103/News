@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Link from "@mui/material/Link";
+import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 const Articles = () => {
@@ -33,14 +33,9 @@ const Articles = () => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Link
-                      component="button"
-                      href={url}
-                      sx={{ mx: 1 }}
-                      underline="none"
-                    >
+                    <Button variant="contained" href={url}>
                       Learn More
-                    </Link>
+                    </Button>
                   </CardActions>
                 </Card>
               </Grid>
