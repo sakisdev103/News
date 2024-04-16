@@ -33,7 +33,12 @@ const Articles = () => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Link href={url} sx={{ mx: 1 }} underline="none">
+                    <Link
+                      component="button"
+                      href={url}
+                      sx={{ mx: 1 }}
+                      underline="none"
+                    >
                       Learn More
                     </Link>
                   </CardActions>
