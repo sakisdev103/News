@@ -29,10 +29,10 @@ const Articles = () => {
                         moment(published_date).isSame(moment(), "day")
                           ? "Today"
                           : published_date.slice(0, 10)
-                      } ${published_date.slice(11, 16)}`}
+                      } `}
                     </Typography>
                   </CardContent>
-                  <CardActions>
+                  <CardActions sx={{ justifyContent: "center" }}>
                     <Button variant="contained" href={url}>
                       Learn More
                     </Button>
