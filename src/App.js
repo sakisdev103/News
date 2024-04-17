@@ -35,7 +35,6 @@ const App = () => {
 
     try {
       const response = await axios.request(options);
-      console.log(response.data);
       setTotalResults(response.data.totalResults);
       setArticles(response.data.articles.slice(0, 10));
       setIsLoading(false);
@@ -45,7 +44,7 @@ const App = () => {
   };
   useEffect(() => {
     fetchFunc(selectedCountry);
-  }, []);
+  }, [selectedCountry]);
 
   const fetchMoreData = async () => {
     const options = {
@@ -86,8 +85,7 @@ const App = () => {
           hasMore={articles.length !== totalResults}
           loader={articles.length > totalResults ? "" : <Loading />}
         >
-          <Main />
-          {/* {isLoading ? <Loading /> : articles !== undefined && <Main />} */}
+          {isLoading ? <Loading /> : articles !== undefined && <Main />}
         </InfiniteScroll>
       </GlobalContext.Provider>
     </>
