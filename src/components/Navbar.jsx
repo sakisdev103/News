@@ -24,39 +24,41 @@ const Navbar = () => {
     <nav>
       <Container maxWidth="false" sx={{ mb: 2 }} disableGutters={true}>
         <AppBar position="static" color="transparent">
-          <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              News
-            </Typography>
-            <FormControl sx={{ m: 1, minWidth: 80 }}>
-              <InputLabel id="country-label">Country</InputLabel>
-              <Select
-                labelId="country-label"
-                id="country-select-small"
-                value={selectedCountry}
-                label="Country"
-                onChange={handleChange}
-                autoWidth
-              >
-                {countries.map((country) => {
-                  const Flag = icons[country];
-                  return (
-                    <MenuItem value={country} key={country}>
-                      <Flag
-                        title={country}
-                        style={{
-                          width: "1.5rem",
-                          height: "0.8rem",
-                          marginRight: "0.2rem",
-                        }}
-                      />
-                      {country}
-                    </MenuItem>
-                  );
-                })}
-              </Select>
-            </FormControl>
-          </Toolbar>
+          <Container maxWidth="lg">
+            <Toolbar>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                News
+              </Typography>
+              <FormControl sx={{ m: 1, minWidth: 80 }}>
+                <InputLabel id="country-label">Country</InputLabel>
+                <Select
+                  labelId="country-label"
+                  id="country-select-small"
+                  value={selectedCountry}
+                  label="Country"
+                  onChange={handleChange}
+                  autoWidth
+                >
+                  {countries.map((country) => {
+                    const Flag = icons[country];
+                    return (
+                      <MenuItem value={country} key={country}>
+                        <Flag
+                          title={country}
+                          style={{
+                            width: "1.5rem",
+                            height: "0.8rem",
+                            marginRight: "0.2rem",
+                          }}
+                        />
+                        {country}
+                      </MenuItem>
+                    );
+                  })}
+                </Select>
+              </FormControl>
+            </Toolbar>
+          </Container>
         </AppBar>
       </Container>
     </nav>
